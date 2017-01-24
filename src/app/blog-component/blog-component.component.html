@@ -1,0 +1,21 @@
+<!--<div *ngFor="let blog of blogs" class="blog-list z-depth-2">  -->
+  <a routerLink="/dashboard">
+  <div class="col s12 m7">
+    <h5 class="header blog-title">{{blog.title}}</h5>
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src="http://lorempixel.com/100/190/nature/6">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p class="hide-on-small-only list-blog-content-sm">{{blog.content|slice:0:285}}</p>
+          <p class="hide-on-med-and-up list-blog-content-md">{{blog.content|slice:0:150}} ...</p>
+        </div>
+        <div class="card-action">
+          <a href="#">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </a>
+<!--</div>-->
