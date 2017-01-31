@@ -1,16 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params }   from '@angular/router';
+import { Blog } from '../blog'
+import { BlogService } from '../blog-service.service'
+import { BLOGS }from '../mock/blog-mock'
 
 @Component({
   selector: 'app-blog-component',
   templateUrl: './blog-component.component.html',
-  styleUrls: ['./blog-component.component.css']
+  styleUrls: ['./blog-component.component.css'],
+  providers: [BlogService],
 })
 export class BlogComponentComponent implements OnInit {
-  constructor(private route: ActivatedRoute,) { }
+  
+  blogs: Blog[];
+  selectedBlog: Blog;
+
+  constructor( private blogService: BlogService ) { }
+
+  getBlogs(): void {
+    this.blogService.getBlogs().then(blogs => this.blogs = blogs);
+  }
 
   ngOnInit(): void{
-    console.log(this.route.params);
+    this.getBlogs();
+  }
+
+  onSelect(blog: Blog): void{
+    // console.log('Under select action .. :)')
+    this.selectedBlog = blog;
+    // console.log(this.selectedBlog);
   }
 
 }

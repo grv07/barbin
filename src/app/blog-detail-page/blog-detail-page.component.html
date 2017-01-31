@@ -1,0 +1,52 @@
+<!--Blog body--> 
+    <div *ngIf="currentBlog" class="col s12 row">
+      <!--Like heart button ...-->
+      <div class="hide-on-small-only col m2 center">
+        <span style="display:block; height: 30px;"></span>
+        <a class="btn-floating btn-large" style="position: fixed; color: green;">
+          <i class="material-icons">playlist_add</i>
+        </a>
+      </div>
+      <div class="col s12 m10">
+        <!--Author img, name, about section-->
+        <div class="row">
+          <div class="author col s12">
+            <div class="col s4" style="margin-top: 1.5%;">
+              <i class="hide-on-small-only large material-icons">insert_chart</i>
+              <i class="hide-on-med-and-up medium material-icons" style="margin-top: 25%;">insert_chart</i>
+            </div>
+
+            <div class="col s8 m10">
+              <p class="auth-name">
+                March App
+                <input type="checkbox" id="test5" />
+                <label for="test5" class="waves-effect waves-teal btn-flat">Follow</label>
+              <br>
+              <span class="min-about">Full Stack Developer</span>
+              <br>
+              <span class="min-about">Nov 2, 2016 . 7 min</span>
+              </p>
+            </div>
+          
+          </div>
+        </div>
+        
+        <!--Author section end-->
+        
+        <div class="col s12">
+          <div>
+            <h5 class="blog-title">
+              {{currentBlog.title}}
+            </h5>
+            <hr>
+            <br>
+          </div>
+          <div class="content blog-content">
+            <p>{{currentBlog.content}}</p>
+            <markdown path="../assets/demo.java" style="font-size: 12px;"></markdown>
+            <markdown path="../assets/demo.cpp" style="font-size: 12px;"></markdown>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End of body-->

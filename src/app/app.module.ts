@@ -7,11 +7,13 @@ import { MarkdownModule } from 'angular2-markdown';
 
 import { AppComponent } from './app.component';
 import { BlogComponentComponent } from './blog-component/blog-component.component';
+import { BlogDetailPageComponent } from './blog-detail-page/blog-detail-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BlogComponentComponent
+    BlogComponentComponent,
+    BlogDetailPageComponent
   ],
   imports: [
     BrowserModule,
@@ -24,13 +26,13 @@ import { BlogComponentComponent } from './blog-component/blog-component.componen
         redirectTo: '/blogs',
         pathMatch: 'full'
       },
-      // {
-      //   path: 'dashboard',
-      //   component: AppComponent
-      // },
+      {
+        path: 'blog/:id',
+        component: BlogDetailPageComponent
+      },
       
       {
-        path: 'dashboard',
+        path: 'blogs',
         component: BlogComponentComponent
       },
     ])

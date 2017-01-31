@@ -7,6 +7,9 @@ blog-content{display:block;margin:0;padding:0;border:0;}
       .brand-logo{
         color: darkgrey !important;
       }
+      .logo-shadow{
+        text-shadow: 4px 0px #d0d0d0;
+      }
       .blog-contant{
         margin-top: 4%;
         margin-left: 13%;
