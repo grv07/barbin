@@ -3,6 +3,7 @@ import { ActivatedRoute, Params }   from '@angular/router';
 import { Blog } from '../blog'
 import { BlogService } from '../blog-service.service'
 import { BLOGS }from '../mock/blog-mock'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-blog-component',
@@ -11,7 +12,6 @@ import { BLOGS }from '../mock/blog-mock'
   providers: [BlogService],
 })
 export class BlogComponentComponent implements OnInit {
-  
   blogs: Blog[];
   selectedBlog: Blog;
 

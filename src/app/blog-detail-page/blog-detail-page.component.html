@@ -1,11 +1,30 @@
 <!--Blog body--> 
     <div *ngIf="currentBlog" class="col s12 row">
       <!--Like heart button ...-->
-      <div class="hide-on-small-only col m2 center">
-        <span style="display:block; height: 30px;"></span>
-        <a class="btn-floating btn-large" style="position: fixed; color: green;">
-          <i class="material-icons">playlist_add</i>
-        </a>
+      <div class="col m2 center">
+        <div class="fixed-action-btn vertical">
+          <a class="btn-floating btn-large red" >
+            <i class="material-icons">menu</i>
+          </a>
+          <ul>
+            <li>
+              <a class="btn-floating red darken-1">
+                <i class="material-icons tooltipped" data-position="left" data-delay="30"
+                 data-tooltip="Add this as note for read later.">note_add</i>
+              </a>
+            </li>
+            <li>
+              <a (click)="onBlogLike()"
+                class="btn-floating green tooltipped" data-position="left" data-delay="30" 
+                data-tooltip="Like this" [class.disabled]="isLiked">
+                <i class="material-icons">stars</i>
+              </a>
+            </li>
+            <li>
+              <a routerLink="/" class="btn-floating blue tooltipped" data-position="left" data-delay="30"
+               data-tooltip="Got to List"><i class="material-icons">view_list</i></a></li>
+          </ul>
+        </div>
       </div>
       <div class="col s12 m10">
         <!--Author img, name, about section-->
@@ -18,16 +37,15 @@
 
             <div class="col s8 m10">
               <p class="auth-name">
-                March App
-                <input type="checkbox" id="test5" />
+                {{currentBlog.author.name}}<br>
+                <input (click)='onAuthorFollow(isFollowed)' type="checkbox" id="test5" />
                 <label for="test5" class="waves-effect waves-teal btn-flat">Follow</label>
               <br>
               <span class="min-about">Full Stack Developer</span>
               <br>
-              <span class="min-about">Nov 2, 2016 . 7 min</span>
+              <span class="min-about">{{currentBlog.lastUpdate}}</span>
               </p>
             </div>
-          
           </div>
         </div>
         
@@ -43,8 +61,8 @@
           </div>
           <div class="content blog-content">
             <p>{{currentBlog.content}}</p>
-            <markdown path="../assets/demo.java" style="font-size: 12px;"></markdown>
-            <markdown path="../assets/demo.cpp" style="font-size: 12px;"></markdown>
+            <!--<markdown path="../assets/demo.java" style="font-size: 12px;"></markdown>-->
+            <!--<markdown path="../assets/demo.cpp" style="font-size: 12px;"></markdown>-->
           </div>
         </div>
       </div>

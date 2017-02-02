@@ -10,47 +10,28 @@
       <!--<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <!--Some usefull initial setup.-->
-      <link rel="stylesheet" type="text/css" href="assets/css/blogPage.css">
       <base href="/">
     </head>
 
     <body>
-      <div class="" style="margin-bottom: 20%;">
-        <!--Blog nav bar-->
-        <div class="navbar-fixed" style="margin-bottom: 5%;">
-          <nav class="basic-color">
-            <div class="nav-wrapper row">
-              <div class="col s3 push-s2">
-                <a href="/" class="brand-logo left logo-shadow">BB</a>
-              </div>
-              <!--<a href="#" class="brand-logo right">barBin</a>-->
-              <div class="col s5 push-s2">
-                <a href="#modal1" style="color: green" class="right">Sign In / Sign Up</a>
-              </div>  
-            </div>
-          </nav>
+      <app-root>
+        <div class="row" style="margin-top: 20%;">
+          <div class="col m5 offset-m3" style="text-align: center;">
+            Wait ..
+          </div> 
+          <div class="progress col m5  offset-m3 ">
+            <div class="indeterminate"></div>
+          </div> 
         </div>
-
-        <!--Login modal-->
-        <div id="modal1" class="modal bottom-sheet">
-          <div class="modal-content" style="color: lightgrey">
-            <h4>Modal Header</h4>
-            <p>A bunch of text</p>
-          </div>
-          <div class="modal-footer">
-            <a href="/" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-          </div>
-        </div>
-          <div class="container">
-            <app-root></app-root>
-          </div>
-      </div>
+      </app-root>
       
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script src="assets/materialize/js/materialize.min.js"></script>
-      <script src="http://cdn.jsdelivr.net/alasql/0.3/alasql.min.js"></script>
+      
+      <!--Some usefull initial setup.-->
+      <link rel="stylesheet" type="text/css" href="assets/css/blogPage.css">
+      
       <script>
         $(document).ready(function(){
           // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered

@@ -8,16 +8,19 @@ import { MarkdownModule } from 'angular2-markdown';
 import { AppComponent } from './app.component';
 import { BlogComponentComponent } from './blog-component/blog-component.component';
 import { BlogDetailPageComponent } from './blog-detail-page/blog-detail-page.component';
+import { ContentFormatPipe } from './content-format.pipe';
+import { ShareddataService } from './shareddata.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     BlogComponentComponent,
-    BlogDetailPageComponent
+    BlogDetailPageComponent,
+    ContentFormatPipe,
   ],
   imports: [
     BrowserModule,
-    MarkdownModule,
+    // MarkdownModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
@@ -37,7 +40,7 @@ import { BlogDetailPageComponent } from './blog-detail-page/blog-detail-page.com
       },
     ])
   ],
-  providers: [],
+  providers: [ShareddataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
