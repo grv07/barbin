@@ -10,6 +10,8 @@ import { BlogComponentComponent } from './blog-component/blog-component.componen
 import { BlogDetailPageComponent } from './blog-detail-page/blog-detail-page.component';
 import { ContentFormatPipe } from './content-format.pipe';
 import { ShareddataService } from './shareddata.service';
+import { CreateBlogComponent } from './create-blog/create-blog.component';
+import { QuillModule } from 'ngx-quill'
 
 @NgModule({
   declarations: [
@@ -17,10 +19,11 @@ import { ShareddataService } from './shareddata.service';
     BlogComponentComponent,
     BlogDetailPageComponent,
     ContentFormatPipe,
+    CreateBlogComponent,
   ],
   imports: [
     BrowserModule,
-    // MarkdownModule,
+    QuillModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
@@ -37,6 +40,11 @@ import { ShareddataService } from './shareddata.service';
       {
         path: 'blogs',
         component: BlogComponentComponent
+      },
+
+      {
+        path: 'edit',
+        component: CreateBlogComponent
       },
     ])
   ],

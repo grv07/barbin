@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Blog } from '../blog'
 import { BlogService } from '../blog-service.service'
 import { ShareddataService } from '../shareddata.service'
+
 // import { ContentFormatPipe } from '../content-format.pipe'
 
 @Component({
