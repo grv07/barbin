@@ -1,73 +1,77 @@
-blog-content{display:block;margin:0;padding:0;border:0;}
+  .blog-content{display:block;margin:0;padding:0;border:0;}
       
-      .basic-color{
-        background-color: white !important;
-        /*position: relative !important;*/
-      }
-      .brand-logo{
-        color: darkgrey !important;
-      }
-      .logo-shadow{
-        text-shadow: 4px 0px #d0d0d0;
-      }
-      .blog-contant{
-        margin-top: 4%;
-        margin-left: 13%;
-        margin-right: 13%;
-      }
-      .min-about {
-        font-size: 12px;
-        color: grey;
-        font-weight: 500;
-      }
-      .name{
-        font-size: 15px;
-      }
-      .auth-name{
-        font-size: 17px;
-      }
+  .basic-color{
+    background-color: white !important;
+    /*position: relative !important;*/
+  }
+  .brand-logo{
+    color: darkgrey !important;
+  }
+  .logo-shadow{
+    text-shadow: 4px 0px #d0d0d0;
+  }
+  .blog-contant{
+    margin-top: 4%;
+    margin-left: 13%;
+    margin-right: 13%;
+  }
+  .min-about {
+    font-size: 12px;
+    color: grey;
+    font-weight: 500;
+  }
+  .name{
+    font-size: 15px;
+  }
+  .auth-name{
+    font-size: 17px;
+  }
 
-      .blog-title{
-        font-family: "medium-content-sans-serif-font", "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
-        line-height: 1.04em (41.6px);
-        vertical-align: baseline;
-        letter-spacing: -1.11667px;
-        word-spacing: 0px;
-        font-weight: 700;
-        color: green;
-      }
+  .blog-title{
+    font-family: "medium-content-sans-serif-font", "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+    line-height: 1.04em (41.6px);
+    vertical-align: baseline;
+    letter-spacing: -1.11667px;
+    word-spacing: 0px;
+    font-weight: 700;
+    color: green;
+  }
 
-     .blog-content{
-        font-family: medium-content-serif-font,Georgia,Cambria,"Times New Roman",Times,serif;
-        /*Font being rendered: medium-content-serif-font;*/
-        font-size: 21px;
-     }
+  .blog-content{
+    font-family: medium-content-serif-font,Georgia,Cambria,"Times New Roman",Times,serif;
+    /*Font being rendered: medium-content-serif-font;*/
+    font-size: 21px;
+  }
 
-     .list-blog-content-sm{
-        font-family: medium-content-serif-font,Georgia,Cambria,"Times New Roman",Times,serif;
-        /*Font being rendered: medium-content-serif-font;*/
-        font-size: 21px;
-        color: grey !important;
-     }
+  .list-blog-content-sm{
+    font-family: medium-content-serif-font,Georgia,Cambria,"Times New Roman",Times,serif;
+    /*Font being rendered: medium-content-serif-font;*/
+    font-size: 21px;
+    color: grey !important;
+  }
 
-     .list-blog-content-md{
-        font-family: medium-content-serif-font,Georgia,Cambria,"Times New Roman",Times,serif;
-        /*Font being rendered: medium-content-serif-font;*/
-        font-size: 15px;
-        color: grey !important;
-     }
+  .list-blog-content-md{
+    font-family: medium-content-serif-font,Georgia,Cambria,"Times New Roman",Times,serif;
+    /*Font being rendered: medium-content-serif-font;*/
+    font-size: 15px;
+    color: grey !important;
+  }
 
-     .blog-list{
-      padding: 4px 0px 0px 12px;
-    }
+  .blog-list{
+  padding: 4px 0px 0px 12px;
+}
 
-     
+/*Editor style */
+.blog-editor{
+  margin-bottom: 5px;
+}
 
-     /*
-     .hide 	Hidden for all Devices
-     .hide-on-small-only 	Hidden for Mobile Only
-     .hide-on-med-only 	Hidden for Tablet Only
-     .hide-on-med-and-down 	Hidden for Tablet and Below
-     .hide-on-med-and-up 	Hidden for Tablet and Above
-     .hide-on-large-only 	Hidden for Desktop Only
-     */
+
+/*
+.hide 	Hidden for all Devices
+.hide-on-small-only 	Hidden for Mobile Only
+.hide-on-med-only 	Hidden for Tablet Only
+.hide-on-med-and-down 	Hidden for Tablet and Below
+.hide-on-med-and-up 	Hidden for Tablet and Above
+.hide-on-large-only 	Hidden for Desktop Only
+*/

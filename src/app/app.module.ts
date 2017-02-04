@@ -12,6 +12,8 @@ import { ContentFormatPipe } from './content-format.pipe';
 import { ShareddataService } from './shareddata.service';
 import { CreateBlogComponent } from './create-blog/create-blog.component';
 import { QuillModule } from 'ngx-quill'
+import { QuillEditorModule } from 'ng2-quill-editor';
+
 
 @NgModule({
   declarations: [
@@ -23,9 +25,9 @@ import { QuillModule } from 'ngx-quill'
   ],
   imports: [
     BrowserModule,
-    QuillModule,
     FormsModule,
     HttpModule,
+    QuillEditorModule,
     RouterModule.forRoot([
       {
         path: '',
@@ -36,7 +38,6 @@ import { QuillModule } from 'ngx-quill'
         path: 'blog/:id',
         component: BlogDetailPageComponent
       },
-      
       {
         path: 'blogs',
         component: BlogComponentComponent
