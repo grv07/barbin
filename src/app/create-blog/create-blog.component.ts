@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { editorFAQ } from '../mock/style-faq'
 declare var $: any
+
 @Component({
   selector: 'app-create-blog',
   templateUrl: './create-blog.component.html',
