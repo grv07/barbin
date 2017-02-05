@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Blog } from '../blog'
+import { Blog } from '../model-classes/blog'
+import { User } from '../model-classes/user'
 import { BlogService } from '../blog-service.service'
 import { ShareddataService } from '../shareddata.service'
+import { Router } from '@angular/router';
+
 
 // import { ContentFormatPipe } from '../content-format.pipe'
 
@@ -17,9 +20,14 @@ export class BlogDetailPageComponent implements OnInit {
   currentBlog: Blog;
   isLiked: Boolean = false;
   isFollowed: Boolean = false;
+  currentLoginUser: User;
 
   constructor(private route: ActivatedRoute, private blogService: BlogService, 
-    private dataService: ShareddataService) { }
+    private dataService: ShareddataService, private router: Router) { }
+
+  getCurrentUser(): void {
+    this.currentLoginUser =  this.dataService.getCurrentUser();
+  }
 
   getCurrentBlog(id: number): void {
     this.currentBlog = this.blogService.getBlog(id);
@@ -30,6 +38,11 @@ export class BlogDetailPageComponent implements OnInit {
     this.dataService.setUserLikeOnBlog(this.currentBlog.id);
     console.log(this.dataService.userLikes);
     this.isLiked = true;
+  }
+
+  blogEditAction(blogId: number): void {
+    console.log('go for edit ...');
+    this.router.navigate(['/edit', blogId]);
   }
 
   onAuthorFollow(status: boolean): void {
@@ -55,12 +68,12 @@ export class BlogDetailPageComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
        this.id = +params['id']; // (+) converts string 'id' to a number
-       
     });
 
     this.getCurrentBlog(this.id);
     this.isLiked = this.dataService.checkIfUserLikeOnBlog(this.currentBlog.id);
     console.log(this.isLiked);
+    this.getCurrentUser()
   }
 
 }

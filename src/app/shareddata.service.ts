@@ -1,15 +1,31 @@
 import { Injectable } from '@angular/core';
-import { Blog } from './blog'
+import { Blog } from './model-classes/blog'
+import { User } from './model-classes/user'
+import { USERS } from './mock/user-mocks'
+
 
 @Injectable()
 export class ShareddataService {
   userLikes: Number[] = [];
   followList: Number[] = [];
+  currentLoginUser: User; 
 
-  constructor() { 
+  constructor() {
     console.log('create new ...');
+    this.setCurrentLoginUser()
   }
-  
+
+  // Current login user
+  setCurrentLoginUser() : void {
+    this.currentLoginUser = USERS[0];
+  }
+
+  getCurrentUser() : User {
+    return this.currentLoginUser;
+  }
+
+
+
   // ----------- User Like set/get ---------------
 
   setUserLikeOnBlog(blogId: Number): void {

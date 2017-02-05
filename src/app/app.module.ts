@@ -13,6 +13,7 @@ import { ShareddataService } from './shareddata.service';
 import { CreateBlogComponent } from './create-blog/create-blog.component';
 import { QuillModule } from 'ngx-quill'
 import { QuillEditorModule } from 'ng2-quill-editor';
+import { EditBlogComponent } from './edit-blog/edit-blog.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { QuillEditorModule } from 'ng2-quill-editor';
     BlogDetailPageComponent,
     ContentFormatPipe,
     CreateBlogComponent,
+    EditBlogComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,9 +46,14 @@ import { QuillEditorModule } from 'ng2-quill-editor';
       },
 
       {
-        path: 'edit',
-        component: CreateBlogComponent
+        path: 'edit/:id',
+        component: EditBlogComponent
       },
+
+      {
+        path: 'create',
+        component: CreateBlogComponent 
+      }
     ])
   ],
   providers: [ShareddataService],

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params }   from '@angular/router';
-import { Blog } from '../blog'
+import { Blog } from '../model-classes/blog'
 import { BlogService } from '../blog-service.service'
 import { BLOGS }from '../mock/blog-mock'
 import { Router } from '@angular/router';

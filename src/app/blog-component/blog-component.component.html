@@ -8,8 +8,10 @@
       </div>
       <div class="card-stacked">
         <div class="card-content">
-          <p class="hide-on-small-only list-blog-content-sm">{{blog.content|slice:0:285}}</p>
-          <p class="hide-on-med-and-up list-blog-content-md">{{blog.content|slice:0:150}} ...</p>
+          <p class="hide-on-small-only list-blog-content-sm" 
+                  [innerHTML]="blog.content|slice:0:285">
+          </p>
+          <p class="hide-on-med-and-up list-blog-content-md" [innerHTML]="blog.content|slice:0:150"></p>
         </div>
         <div class="card-action">
           <a href="#">Read More</a>

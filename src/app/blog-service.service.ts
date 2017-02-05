@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BLOGS } from './mock/blog-mock'
-import { Blog } from './blog'
+import { Blog } from './model-classes/blog'
 
 @Injectable()
 export class BlogService {

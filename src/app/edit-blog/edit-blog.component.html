@@ -2,37 +2,34 @@
 
 <!-- use with ngModel -->
 <div class="blog-editor">
-  <quill-editor [(ngModel)]="editorContent"
+  <quill-editor [(ngModel)]="blogData.content"
               [config]="editorConfig"
               (ready)="onEditorCreated($event)"
               (change)="onContentChanged($event)">
   </quill-editor>
 </div>
+<!--{{editorContent}}-->
+<!--<div [innerHTML]="editorContent"></div>-->
+
+<!--Preview blog-->
+<!-- Modal Trigger -->
+<!--<a class="modal-trigger waves-effect waves-light btn" href="#modal1">Modal</a>-->
 
 <!-- Modal Structure -->
-<div id="preview-modal" class="modal modal-fixed-footer">
+<div id="preview-action" class="modal modal-fixed-footer">
   <div class="modal-content">
     <!--<h4>Modal Header</h4>-->
-    <!--<p [innerHTML]="editorContent">Loading ...</p>-->
-    Data here ...
+    <p [innerHTML]="blogData.content">Loading ...</p>
   </div>
   <div class="modal-footer">
     <button class="modal-action modal-close waves-effect waves-green btn-flat" style="margin: 3px;">back</button>
-    <a href="" class="modal-action modal-close waves-effect waves-green btn-flat green">
+    <a (click)="blogSaveAction()" class="modal-action modal-close waves-effect waves-green btn-flat green">
       <i class="material-icons right">launch</i>
       Submit
     </a>
     <!--<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Edit</a>-->
   </div>
 </div>
-
-<!--{{editorContent}}-->
-<!--<div [innerHTML]="editorContent"></div>-->
-
-<!--Preview blog-->
-<!-- Modal Trigger -->
-<a href="#preview-modal" class="btn modal-trigger waves-effect waves-light">Preview<i class="material-icons right">view</i></a>
-<!--<a class="modal-trigger waves-effect waves-light btn" href="">Modal</a>-->
-
+<a href="#preview-action" class="btn modal-trigger waves-effect waves-light">Preview<i class="material-icons right">view</i></a>
 <!--<button class="btn waves-effect blue waves-light">Submit<i class="material-icons right">send</i></button>-->
 <!--<button class="btn waves-effect green waves-light">Save in draft<i class="material-icons right">save</i></button>-->

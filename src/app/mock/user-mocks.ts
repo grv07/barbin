@@ -1,4 +1,4 @@
-import { User } from '../user'
+import { User } from '../model-classes/user'
 
 export const USERS: User[] = [
     { id: 1, name: 'hello', email: 'hello@email.com', password: '1234', token: 'gtyuhdss78a',},

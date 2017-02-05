@@ -2,17 +2,19 @@
     <div *ngIf="currentBlog" class="col s12 row">
       <!--Like heart button ...-->
       <div class="col m2 center">
-        <div class="fixed-action-btn vertical">
+        <div class="fixed-action-btn horizontal click-to-toggle">
           <a class="btn-floating btn-large red" >
             <i class="material-icons">menu</i>
           </a>
           <ul>
+
             <li>
               <a class="btn-floating red darken-1">
                 <i class="material-icons tooltipped" data-position="left" data-delay="30"
                  data-tooltip="Add this as note for read later.">note_add</i>
               </a>
             </li>
+
             <li>
               <a (click)="onBlogLike()"
                 class="btn-floating green tooltipped" data-position="left" data-delay="30" 
@@ -20,9 +22,17 @@
                 <i class="material-icons">stars</i>
               </a>
             </li>
+
             <li>
               <a routerLink="/" class="btn-floating blue tooltipped" data-position="left" data-delay="30"
-               data-tooltip="Got to List"><i class="material-icons">view_list</i></a></li>
+               data-tooltip="Got to List"><i class="material-icons">view_list</i></a>
+            </li>
+
+            <li *ngIf="currentBlog.author.id == currentLoginUser.id" >
+              <a (click)="blogEditAction(currentBlog.id)" class="btn-floating blue tooltipped" data-position="left" data-delay="30"
+               data-tooltip="Got to List"><i class="material-icons">edit</i></a>
+            </li>
+
           </ul>
         </div>
       </div>
@@ -60,7 +70,7 @@
             <br>
           </div>
           <div class="content blog-content">
-            <p>{{currentBlog.content}}</p>
+            <p [innerHTML]="currentBlog.content"></p>
             <!--<markdown path="../assets/demo.java" style="font-size: 12px;"></markdown>-->
             <!--<markdown path="../assets/demo.cpp" style="font-size: 12px;"></markdown>-->
           </div>
