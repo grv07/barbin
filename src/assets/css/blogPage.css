@@ -17,6 +17,12 @@
     max-height:600px;
     font-size: 12px;
   }
+ 
+  .btn-small {
+    height: 24px;
+    line-height: 24px;
+    padding: 0 0.5rem;
+  }
   
 
   .preview-modal{ width: 75% !important ; height: 75% !important ; }
