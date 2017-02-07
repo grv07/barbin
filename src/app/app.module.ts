@@ -14,6 +14,7 @@ import { CreateBlogComponent } from './create-blog/create-blog.component';
 import { QuillModule } from 'ngx-quill'
 import { QuillEditorModule } from 'ng2-quill-editor';
 import { EditBlogComponent } from './edit-blog/edit-blog.component';
+import { FooterComponentComponent } from './footer-component/footer-component.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { EditBlogComponent } from './edit-blog/edit-blog.component';
     ContentFormatPipe,
     CreateBlogComponent,
     EditBlogComponent,
+    FooterComponentComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +59,6 @@ import { EditBlogComponent } from './edit-blog/edit-blog.component';
     ])
   ],
   providers: [ShareddataService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, FooterComponentComponent]
 })
 export class AppModule { }

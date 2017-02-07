@@ -1,76 +1,74 @@
 <!--Blog body--> 
     <div *ngIf="currentBlog" class="col s12 row">
-      <!--Like heart button ...-->
-      <div class="col m2 center">
-        <div class="fixed-action-btn horizontal click-to-toggle">
-          <a class="btn-floating btn-large red" >
-            <i class="material-icons">menu</i>
-          </a>
-          <ul>
+      <!--Buttons ...-->
+      <!--<div class="col m2 center">-->
+      <div class="fixed-action-btn horizontal click-to-toggle">
+        <a class="btn-floating btn-large blue" >
+          <i class="material-icons">menu</i>
+        </a>
+        <ul>
+          <li>
+            <a (click)="downloadPdf(currentBlog)" class="btn-floating red darken-1">
+              <i class="material-icons">note_add</i>
+            </a>
+          </li>
 
-            <li>
-              <a class="btn-floating red darken-1">
-                <i class="material-icons">note_add</i>
-              </a>
-            </li>
+          <li>
+            <a (click)="onBlogLike()"
+              class="btn-floating green" [class.disabled]="isLiked">
+              <i class="material-icons">stars</i>
+            </a>
+          </li>
 
-            <li>
-              <a (click)="onBlogLike()"
-                class="btn-floating green" [class.disabled]="isLiked">
-                <i class="material-icons">stars</i>
-              </a>
-            </li>
+          <li>
+            <a routerLink="/" class="btn-floating blue" ><i class="material-icons">view_list</i></a>
+          </li>
 
-            <li>
-              <a routerLink="/" class="btn-floating blue" ><i class="material-icons">view_list</i></a>
-            </li>
+          <li *ngIf="currentBlog.author.id == currentLoginUser.id" >
+            <a (click)="blogEditAction(currentBlog.id)" class="btn-floating blue"><i class="material-icons">edit</i></a>
+          </li>
 
-            <li *ngIf="currentBlog.author.id == currentLoginUser.id" >
-              <a (click)="blogEditAction(currentBlog.id)" class="btn-floating blue"><i class="material-icons">edit</i></a>
-            </li>
+        </ul>
+      </div>
+    <!--</div>-->
+    <div class="col s12 m12">
+      <!--Author img, name, about section-->
+      <div class="row">
+        <div class="author col s12">
+          <div class="col s4" style="margin-top: 1.5%;">
+            <i class="hide-on-small-only large material-icons">insert_chart</i>
+            <i class="hide-on-med-and-up medium material-icons" style="margin-top: 25%;">insert_chart</i>
+          </div>
 
-          </ul>
+          <div class="col s8 m10">
+            <p class="auth-name">
+              {{currentBlog.author.name}}<br>
+              <input (click)='onAuthorFollow(isFollowed)' type="checkbox" id="test5" />
+              <label for="test5" class="waves-effect waves-teal btn-flat">Follow</label>
+            <br>
+            <span class="min-about">Full Stack Developer</span>
+            <br>
+            <span class="min-about">{{currentBlog.lastUpdate}}</span>
+            </p>
+          </div>
         </div>
       </div>
-      <div class="col s12 m10">
-        <!--Author img, name, about section-->
-        <div class="row">
-          <div class="author col s12">
-            <div class="col s4" style="margin-top: 1.5%;">
-              <i class="hide-on-small-only large material-icons">insert_chart</i>
-              <i class="hide-on-med-and-up medium material-icons" style="margin-top: 25%;">insert_chart</i>
-            </div>
-
-            <div class="col s8 m10">
-              <p class="auth-name">
-                {{currentBlog.author.name}}<br>
-                <input (click)='onAuthorFollow(isFollowed)' type="checkbox" id="test5" />
-                <label for="test5" class="waves-effect waves-teal btn-flat">Follow</label>
-              <br>
-              <span class="min-about">Full Stack Developer</span>
-              <br>
-              <span class="min-about">{{currentBlog.lastUpdate}}</span>
-              </p>
-            </div>
-          </div>
+      
+      <!--Author section end-->
+      
+      <div class="col s12">
+        <div>
+          <h5 class="blog-title" [innerHTML]="currentBlog.title">
+          </h5>
+          <hr>
+          <br>
         </div>
-        
-        <!--Author section end-->
-        
-        <div class="col s12">
-          <div>
-            <h5 class="blog-title">
-              {{currentBlog.title}}
-            </h5>
-            <hr>
-            <br>
-          </div>
-          <div class="content blog-content">
-            <p [innerHTML]="currentBlog.content"></p>
-            <!--<markdown path="../assets/demo.java" style="font-size: 12px;"></markdown>-->
-            <!--<markdown path="../assets/demo.cpp" style="font-size: 12px;"></markdown>-->
-          </div>
+        <div class="content blog-content">
+          <p [innerHTML]="currentBlog.content"></p>
+          <!--<markdown path="../assets/demo.java" style="font-size: 12px;"></markdown>-->
+          <!--<markdown path="../assets/demo.cpp" style="font-size: 12px;"></markdown>-->
         </div>
       </div>
     </div>
-    <!--End of body-->
+  </div>
+  <!--End of body-->

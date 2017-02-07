@@ -1,4 +1,13 @@
-<h4 style="text-align: center;">Share is Care</h4>
+<h4 style="text-align: center;">Learn/Create/Share</h4>
+
+<!-- use with ngModel -->
+<div class="blog-editor">
+  <quill-editor [(ngModel)]="blogData.title"
+              [config]="editorConfig"
+              (ready)="onEditorCreated($event)"
+              (change)="onContentChanged($event)">
+  </quill-editor>
+</div>
 
 <!-- use with ngModel -->
 <div class="blog-editor">
@@ -8,6 +17,7 @@
               (change)="onContentChanged($event)">
   </quill-editor>
 </div>
+
 <!--{{editorContent}}-->
 <!--<div [innerHTML]="editorContent"></div>-->
 
@@ -16,20 +26,25 @@
 <!--<a class="modal-trigger waves-effect waves-light btn" href="#modal1">Modal</a>-->
 
 <!-- Modal Structure -->
-<div id="preview-action" class="modal modal-fixed-footer">
+<div id="preview-action" class="modal modal-fixed-footer preview-modal">
   <div class="modal-content">
     <!--<h4>Modal Header</h4>-->
+    <p [innerHTML]="blogData.title">Loading ...</p>
     <p [innerHTML]="blogData.content">Loading ...</p>
   </div>
   <div class="modal-footer">
     <button class="modal-action modal-close waves-effect waves-green btn-flat" style="margin: 3px;">back</button>
-    <a (click)="blogSaveAction()" class="modal-action modal-close waves-effect waves-green btn-flat green">
+    <a  class="modal-action modal-close waves-effect waves-green btn-flat green">
       <i class="material-icons right">launch</i>
       Submit
     </a>
     <!--<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Edit</a>-->
   </div>
 </div>
-<a href="#preview-action" class="btn modal-trigger waves-effect waves-light">Preview<i class="material-icons right">view</i></a>
-<!--<button class="btn waves-effect blue waves-light">Submit<i class="material-icons right">send</i></button>-->
-<!--<button class="btn waves-effect green waves-light">Save in draft<i class="material-icons right">save</i></button>-->
+<div style="margin: 20px;">
+  <a href="#preview-action" class="btn modal-trigger waves-effect waves-light">
+      Preview<i class="material-icons right">visibility</i>
+  </a>
+  <button [routerLink]="['/blog', blogData.id]" class="btn waves-effect blue waves-light">Submit<i class="material-icons right">send</i></button>
+  <button class="btn waves-effect green waves-light">Save in draft<i class="material-icons right">save</i></button>
+</div>

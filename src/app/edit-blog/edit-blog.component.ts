@@ -33,8 +33,6 @@ export class EditBlogComponent implements OnInit {
   
   onContentChanged({ quill, html, text }) {
     console.log(this.blogData.content);
-    
-    // $('#preview-action').modal('open');
   }
 
   blogSaveAction(): Boolean {

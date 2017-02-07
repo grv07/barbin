@@ -1,7 +1,7 @@
 <div *ngFor="let blog of blogs" class="blog-list z-depth-2">  
   <a [routerLink]="['/blog', blog.id]" (click)="onSelect(blog)" >
   <div class="col s12 m7">
-    <h5 class="header blog-title">{{blog.title}}</h5>
+    <h5 class="header blog-title" [innerHTML]="blog.title|slice:0:150"></h5>
     <div class="card horizontal">
       <div class="card-image">
         <img src="http://lorempixel.com/100/190/nature/6">

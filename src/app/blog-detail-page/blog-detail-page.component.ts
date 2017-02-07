@@ -63,8 +63,11 @@ export class BlogDetailPageComponent implements OnInit {
     console.log(this.dataService.followList);
     this.isFollowed = false;
   }
-  
 
+  downloadPdf(blog: Blog): void {
+    this.dataService.downloadAsPdf(blog);
+  }
+  
   ngOnInit() {
     this.route.params.subscribe(params => {
        this.id = +params['id']; // (+) converts string 'id' to a number
