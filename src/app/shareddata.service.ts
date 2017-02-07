@@ -76,12 +76,16 @@ export class ShareddataService {
   downloadAsPdf(blogData: Blog): void {
     // Default export is a4 paper, portrait, using milimeters for units
     var doc = new jsPDF('p', 'pt', 'letter');
+    doc.setFontSize(15);
+    doc.setFont("helvetica");
+
     var  margins = {
                 top: 80,
                 bottom: 60,
                 left: 40,
                 width: 522
             };
+          
     doc.fromHTML(blogData.content,
               margins.left, // x coord
               margins.top, {// y coord
